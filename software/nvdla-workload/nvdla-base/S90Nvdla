@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# busybox init script for loading nvdla dependencies
+#
+
+case "$1" in
+  start)
+    echo "Setting up NVDLA driver"
+    if insmod /usr/share/opendla.ko ; then
+        echo "NVDLA driver installed"
+    else
+        echo "NVDLA driver failed installation"
+    fi
+    ;;
+  stop)
+    echo "There is nothing to stop for the NVDLA driver"
+    ;;
+  restart|reload)
+    "$0" stop
+    "$0" start
+    ;;
+  *)
+    echo $"Usage: $0 {start|stop|restart}"
+    exit 1
+esac
+
+exit $?

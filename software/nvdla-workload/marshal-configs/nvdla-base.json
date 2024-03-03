@@ -1,0 +1,15 @@
+{
+  "name" : "nvdla-base",
+  "base" : "br-base.json",
+  "workdir" : "../nvdla-base",
+  "host-init" : "build-umd.sh",
+  "post-bin" : "build-kmd.sh",
+  "linux-config" : "nvdla-kfrag",
+  "files" : [
+      ["opendla.ko", "/usr/share/opendla.ko"],
+      ["S90Nvdla", "/etc/init.d/"],
+      ["nvdla-sw/umd/out/apps/runtime/nvdla_runtime/nvdla_runtime", "/root/"],
+      ["nvdla-sw/umd/out/core/src/runtime/libnvdla_runtime/libnvdla_runtime.so", "/root/"]
+  ],
+  "mem" : "4GiB"
+}

@@ -1,0 +1,3 @@
+[submodule "nvdla-base/nvdla-sw"]
+	path = nvdla-base/nvdla-sw
+	url = https://github.com/ucb-bar/nvdla-sw.git
