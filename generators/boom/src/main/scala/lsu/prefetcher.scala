@@ -58,7 +58,7 @@ class NLPrefetcher(implicit edge: TLEdgeOut, p: Parameters) extends DataPrefetch
     req_addr  := mshr_req_addr
     req_cmd   := Mux(ClientStates.hasWritePermission(io.req_coh.state), M_PFW, M_PFR)
     printf("hello\n")
-    printf("original address is %d\n", io.req_addr)
+    printf("original address is %d \n", io.req_addr)
     printf("prefetch address is %d\n", mshr_req_addr)
   } .elsewhen (io.prefetch.fire()) {
     req_valid := false.B
